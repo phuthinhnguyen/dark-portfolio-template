@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            
+            font-family: "Montserrat";
+          
+        }
+        .nav{
+            position: fixed;
+            width: 120px;
+            background-color: rgba(0, 0, 0, 0.85);
+            height: 100%;
+        
+        }
+     
+        .nav img{
+            width: 120px;
+            height: 130px;
+            opacity: 0.6;
+            filter: brightness(150%);
+        }
+        .nav a{
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            padding: 20px;
+            font-size: 12px;
+            line-height: 30px;
+        }
+        .nav a:hover{
+            background-color: black;
+        }
+        .nav i{
+            font-size: 30px;
+            display: block;
+        }
+      
+      
+        .container{
+           margin-left: 120px;  
+           background-color: black;
+         
+        }
+        .container-item{
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        header{
+          
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+        header h1{
+            font-size:60px;
+            font-weight: lighter;
+        }
+        .img {
+            margin: auto;
+        }
+        .img img{
+            width: 100%;
+            height: auto;
+        }
+        .about{
+            color: white;
+            padding: 50px 10px;
+        }
+        .about hr{
+            min-width: 200px;
+            float: left;
+            
+        }
+        .about h1{
+            font-weight: lighter;
+            line-height: 10px;
+        }
+        .about .name p{
+            clear: both;
+            margin-top: 60px;
+            line-height: 25px;
+            color: gray;
+        }
+        .skill h1{
+       
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        .skill p{
+            color: gray;
+        }
+        .about button{
+            border: none;
+            height: 30px;
+        }
+        .photography-left{
+            height: 20px;
+            background-color: rgb(80, 79, 79);
+            width: 95%;
+            float: left;
+        }
+        .photography-right{
+            height: 20px;
+            background-color: white;
+            float: left;
+            width: 5%;
+        }
+        .design-left{
+            height: 20px;
+            background-color: rgb(80, 79, 79);
+            width: 85%;
+            float: left;
+        }
+        .design-right{
+            height: 20px;
+            background-color: white;
+            float: left;
+            width: 15%;
+        }
+        .photoshop-left{
+            height: 20px;
+            background-color: rgb(80, 79, 79);
+            width: 80%;
+            float: left;
+        }
+        .photoshop-right{
+            height: 20px;
+            background-color: white;
+            float: left;
+            width: 20%;
+        }
+        .skill div::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .index{
+            display: grid;
+            background-color: white;
+            color: black;
+            grid-template-columns: auto auto auto auto;
+            margin-top: 30px;
+         
+        }
+        .index-item{
+            text-align: center;
+        }
+        .index-item-text{
+         
+        }
+        .download{
+            display: inline-block;
+            background-color: white;
+            margin-top: 30px;
+            padding: 15px 20px;
+            cursor: pointer;
+        }
+        .download a{
+            text-decoration: none;
+            color: black;
+        }
+        .download:hover{
+            background-color: lightgray;
+        }
+        .download i{
+            color: black;
+            margin-right: 5px;
+        }
+        .price{
+            margin-top: 70px;
+        }
+        .price-content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+            margin-top: 40px;
+        }
+        .price-item{
+            flex: 1;
+            text-align: center;
+            color: black;
+            background-color: white;
+            opacity: 0.5;
+        }
+        .price-item:hover{
+            opacity: 1;
+        }
+        .price-item h4{
+            padding: 20px;
+            color: white;
+            font-size: 25px;
+            background-color: gray;
+            margin-top: 0;
+        }
+        .price-item p{
+            color: black;
+            font-size: 15px;
+            margin-top: 0;
+            border-bottom: 1px solid gray;
+            height: 30px;
+            line-height: 10px;
+      
+        }
+        .price-item a{
+            padding: 10px;
+            text-decoration: none;
+            display: inline-block;
+            color: black;
+            background-color: lightgray;
+            margin-bottom: 20px;
+        }
+        .price-item a:hover{
+            background-color: black;
+            color: white;
+        }
+        .reputation{
+            margin-top: 70px;
+        }
+        .reputation-content{
+            display: block;
+            margin-top: 40px;
+        }
+        .reputation-content::after{
+            display: table;
+            clear: both;
+            content: "";
+        }
+        .reputation-content-text{
+            display: flex;
+            justify-content: center;
+            float: left;
+            margin-left: 20px;
+            flex-direction: column;
+        }
+        .reputation-content-text p{
+            color: gray;
+            line-height: 8px;
+        }
+        .reputation img{
+            width: 80px;
+            height: 80px;
+            float: left;
+            border-radius: 50%;
+        }
+        .photos{
+            color: white;
+            margin-top: 30px;
+            padding-top: 60px;
+        }
+        .photos hr{
+            min-width: 200px;
+            float: left;
+           
+        }
+        .photos-container{
+            clear: both;
+            display: flex;
+            column-gap: 10px;
+            margin-top: 60px;
+        }
+        .photos img{
+            width: 100%;
+            height: auto;
+        }
+        .photos-item{
+            flex: 1;
+        }
+        .contact{
+            color: white;
+            padding: 60px 0;
+            
+        }
+        .contact hr{
+            min-width: 200px;
+            float: left;
+        }
+        .contact-item{
+            clear: both;
+            margin-top: 60px;
+        }
+        .contact i{
+            font-size: 30px;
+            margin-right: 20px;
+            color: white;
+            display: inline-block;
+            width: 30px;
+        }
+        .let{
+            margin-top: 70px;
+        }
+        .contact p{
+            color: gray;
+            font-size: 15px;
+           
+        }
+        .contact input{
+            display: block;
+            width: 100%;    
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .contact a{
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            padding: 10px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .contact a i{
+            font-size: 20px;
+            margin-right: 0;
+        }
+        #send{
+            color: black;
+        }
+        .nav-mobile{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            opacity: 0.6;
+            display: none;
+            background-color: black;
+        }
+     
+        .nav-mobile a{
+            display: inline-block;
+            padding: 10px;
+            color: white;
+            flex: 1;
+            text-decoration: none;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+           
+           
+        }
+        .nav-mobile a:hover{
+            background-color: lightgray;
+            color: black;
+        }
+       
+        @media only screen and (max-width:600px){
+            .nav{
+                display: none;
+            }
+            .nav-mobile{
+                display: flex;
+            }
+            .container{
+                margin-left: 0;
+            }
+            .price-content{
+                flex-direction: column;
+                row-gap: 10px;
+            }
+            .price-item{
+                width: 100%;
+            }
+            .photos-container{
+                flex-direction: column;
+            }
+            .index{
+                grid-template-columns: auto auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <img src="man_smoke.jpg" alt="">
+        <a href=""><i class="fa fa-home"></i>HOME</a>
+        <a href="#about"><i class="fa fa-user"></i>ABOUT</a>
+        <a href="#photos"><i class="fa fa-eye"></i>PHOTOS</a>
+        <a href="#contact"><i class="fa fa-envelope"></i>CONTACT</a>
+    </div>
+    <div class="nav-mobile">
+            <a href="">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#photos">PHOTOS</a>
+            <a href="#contact">CONTACT</a>
+    </div>
+    <div class="container">
+        <div class="container-item">
+            <header>
+                <h1>I'm John Doe.</h1>
+                <p>Photographer and Web Designer.</p>
+            </header>
+            <div class="img">
+                <img src="man_smoke.jpg" alt="">
+            </div>
+            <div class="about" id="about">
+                <div class="name">
+                    <h1>My Name</h1>
+                    <hr>
+                    <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>    
+                </div>
+                <div class="skill" id="skill">
+                    <h1>My Skills</h1>
+                    <div>
+                        <p>Photography</p>
+                        <button class="photography-left"></button>
+                        <button class="photography-right"></button>
+                    </div>
+                    <div>
+                        <p>Web Design</p>
+                        <button class="design-left"></button>
+                        <button class="design-right"></button>
+                    </div>
+                    <div>
+                        <p>Photoshop</p>
+                        <button class="photoshop-left"></button>
+                        <button class="photoshop-right"></button>
+                    </div>
+                </div>
+                <div class="index">
+                    <div class="index-item">
+                        <div class="index-item-text">
+                            <h2>11+</h2>
+                            <p>Partners</p>
+                        </div>
+                    </div>
+                    <div class="index-item">
+                        <div class="index-item-text">
+                            <h2>55+</h2>
+                            <p>Projects Done</p>
+                        </div>
+                    </div>
+                    <div class="index-item">
+                        <div class="index-item-text">
+                            <h2>89+</h2>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                    <div class="index-item">
+                        <div class="index-item-text">
+                            <h2>150+</h2>
+                            <p>Meetings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="download">
+                    <a href=""><i class="fa fa-download"></i>Download Resume</a>
+                </div> 
+                <div class="price">
+                    <h1>My Price</h1>
+                    <div class="price-content">
+                        <div class="price-item">
+                            <h4>Basic</h4>
+                            <p>Web Design</p>
+                            <p>Photography</p>
+                            <p>5GB Storage</p>
+                            <p>Mail Support</p>
+                            <h2>$ 10</h2>
+                            <p>per month</p>
+                            <a href="">Sign Up</a>
+                        </div>
+                        <div class="price-item">
+                            <h4>Pro</h4>
+                            <p>Web Design</p>
+                            <p>Photography</p>
+                            <p>50GB Storage</p>
+                            <p>Endless Support</p>
+                            <h2>$ 25</h2>
+                            <p>per month</p>
+                            <a href="">Sign Up</a>
+                        </div>
+                    </div>
+                </div>   
+                <div class="reputation">
+                    <h1>My Reputation</h1>
+                    <div class="reputation-content">
+                        <img src="bandmember.jpg" alt="">
+                        <div class="reputation-content-text">
+                            <p>Chris Fox. CEO at Mighty Schools.</p>
+                            <p>John Doe saved us from a web disaster.</p>
+                        </div>
+                        
+                    </div>
+                    <div class="reputation-content">
+                        <img src="avatar_g2.jpg" alt="">
+                        <div class="reputation-content-text">
+                            <p>Rebecca Flex. CEO at Company.</p>
+                            <p>No one is better than John Doe.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="photos" id="photos">
+                <h1>My Photos</h1>
+                <hr>
+                <div class="photos-container">
+                    <div class="photos-item">
+                        <img src="wedding.jpg" alt="">
+                        <img src="rocks.jpg" alt="">
+                        <img src="sailboat.jpg" alt="">
+                    </div>
+                    <div class="photos-item">
+                        <img src="underwater.jpg" alt="">
+                        <img src="chef.jpg" alt="">
+                        <img src="wedding.jpg" alt="">
+                        <img src="p6.jpg" alt="">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="contact" id="contact">
+                <h1>Contact Me</h1>
+                <hr>
+                <div class="contact-item">
+                    <p href=""><i class="fa fa-map-marker"></i>Chicago, US</p>
+                    <p href=""><i class="fa fa-phone"></i> Phone: +00 151515</p>
+                    <p href=""><i class="fa fa-envelope"></i>Email: mail@mail.com</p>
+                    <p class="let">Let's get in touch. Send me a message:</p>
+                    <input type="text" placeholder="Name">
+                    <input type="text" placeholder="E-mail">
+                    <input type="text" placeholder="Subject">
+                    <input type="text" placeholder="Message">
+                    <a href=""><i id="send" class="fa fa-paper-plane"></i>SEND MESSAGE</a>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+  
+</body>
+</html>
